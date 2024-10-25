@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 @FeignClient(name = "microservice-email")
 public interface EmailClient {
 
-    @PostMapping("/email/send")
+    @PostMapping("/api/email/send")
     String sendEmail(@RequestBody MessageRequest request);
 }
