@@ -19,7 +19,6 @@ This project demonstrates the development of a microservices architecture using 
 - [Getting Started](#getting-started)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Project Flow](#project-flow)
 - [Important Note](#important-note)
 - [Contributing](#contributing)
