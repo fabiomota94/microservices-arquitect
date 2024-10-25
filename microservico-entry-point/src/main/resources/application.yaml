@@ -1,12 +1,19 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://localhost:8762/eureka
 
 spring:
   application:
     name: microservice-entry-point
-
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connect-timeout: 1000
+            read-timeout: 1000
+            logger-level: basic
 management:
   endpoints:
     web:
@@ -15,3 +22,23 @@ management:
   endpoint:
     health:
       show-details: always
+  health:
+    circuitbreakers:
+      enabled: true
+
+server:
+  port: 8081
+
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 5s
+        failureRateThreshold: 50
+        eventConsumerBufferSize: 10
