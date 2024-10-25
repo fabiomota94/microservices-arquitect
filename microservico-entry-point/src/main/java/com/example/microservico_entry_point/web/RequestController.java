@@ -18,10 +18,10 @@ public class RequestController {
     @Autowired
     SendService sendService;
 
-    // Define o endpoint POST
+    // Defines the POST endpoint
     @PostMapping
     public ResponseEntity<String> createRequest(@RequestBody MessageRequest messageRequest) {
-        logger.info("Pedido recebido {}",messageRequest);
+        logger.info("Request received {}", messageRequest);
         String result = sendService.sendRequest(messageRequest);
         return new ResponseEntity<>("Request created successfully!", HttpStatus.CREATED);
     }

@@ -1,4 +1,4 @@
-package com.example.microservico_entry_point.model.request;
+package com.example.microservico_email.model.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
